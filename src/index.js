@@ -1,23 +1,21 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import {App} from './app';
-import reportWebVitals from './reportWebVitals';
-import {ApolloClient, ApolloProvider, InMemoryCache} from "@apollo/client";
+import React from "react";
+import ReactDOM from "react-dom";
+import reportWebVitals from "./reportWebVitals";
+import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { App } from "./App";
 
 const client = new ApolloClient({
-    uri: 'https://funded-pet-library.moonhighway.com/',
-    cache: new InMemoryCache()
+  uri: "https://funded-pet-library.moonhighway.com/",
+  cache: new InMemoryCache(),
 });
-
-
 
 ReactDOM.render(
   <React.StrictMode>
-      <ApolloProvider client={client}>
-          <App />
-      </ApolloProvider>
+    <ApolloProvider client={client}>
+      <App />
+    </ApolloProvider>
   </React.StrictMode>,
-  document.getElementById('root')
+  document.getElementById("root")
 );
 
 // If you want to start measuring performance in your app, pass a function
