@@ -1,22 +1,16 @@
 import React from "react";
-import { useCustomer } from "../hooks/useCustomer";
+import { useCustomerAuth } from "../hooks/useCustomerAuth";
 
-export const Customer = () => {
-  const { handleChange, save, createdAccount } = useCustomer();
+export const Login = () => {
+  const { handleChange, save, userData } = useCustomerAuth();
 
-  const customerJSX = createdAccount && (
-    <p>We created customer with name: {createdAccount.name}</p>
+  const customerJSX = userData && (
+    <p>{`Customer with username ${userData?.customer?.username} logged in`}</p>
   );
 
   return (
     <>
-      <h1>Registration</h1>
-      <input
-        type="text"
-        placeholder="name"
-        name="name"
-        onChange={handleChange}
-      />
+      <h1>Login</h1>
       <input
         type="text"
         placeholder="username"
