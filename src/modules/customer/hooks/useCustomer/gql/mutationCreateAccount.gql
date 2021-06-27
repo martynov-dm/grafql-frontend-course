@@ -1,5 +1,6 @@
 mutation createdAccount($account: CreateAccountInput!) {
     createAccount(input: $account) {
         name
+        dateCreated
     }
 }

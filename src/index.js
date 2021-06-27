@@ -1,13 +1,9 @@
 import React from "react";
 import ReactDOM from "react-dom";
 import reportWebVitals from "./reportWebVitals";
-import { ApolloClient, ApolloProvider, InMemoryCache } from "@apollo/client";
+import { ApolloProvider } from "@apollo/client";
 import { App } from "./App";
-
-const client = new ApolloClient({
-  uri: "https://funded-pet-library.moonhighway.com/",
-  cache: new InMemoryCache(),
-});
+import { client } from "./init/client";
 
 ReactDOM.render(
   <React.StrictMode>
